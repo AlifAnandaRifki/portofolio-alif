@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sertifikasi - Alif</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#38b6ff" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png" />
+  <meta name="description" content="Portofolio Alif: Pengembang sistem embedded, IoT dan desainer PCB.">
+</head>
+<body>
+  <!-- BACKGROUND -->
+  <div class="mesh-bg"></div>
+  <canvas id="bgCanvas"></canvas>
+  <nav class="top-nav">
+    <a href="index.html" class="logo">ALIF ANANDA RIFKI</a>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="tentang.html">Tentang</a></li>
+      <li><a href="projek.html">Projek</a></li>
+      <li><a href="sertifikasi.html">Sertifikasi</a></li>
+      <li><a href="organisasi.html">Organisasi</a></li>
+      <li><a href="pengalaman.html">Pengalaman</a></li>
+      <li><a href="assets/CV_Alif.pdf" target="_blank">CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sertifikasi Section -->
+  <section class="sertifikat-section fade-in">
+    <div class="sertifikat-header">
+      <h1>Sertifikasi & Penghargaan</h1>
+      <p>Kumpulan sertifikat pelatihan dan kompetensi yang telah saya ikuti.</p>
+    </div>
+    
+    <!-- Grid Sertifikat -->
+    <div class="sertifikat-grid">
+      <div class="sertifikat-card" data-category="kompetensi">
+        <img src="assets/sertifikat/skk.jpg" alt="Sertifikat K3">
+        <div class="sertifikat-info">
+          <h3>Sertifikasi K3 Kontruksi Utama</h3>
+          <p>BNSP - 2024</p>
+        </div>
+      </div>
+      <div class="sertifikat-card" data-category="kompetensi">
+        <img src="assets/sertifikat/9001.jpg" alt="Webinar IoT">
+        <div class="sertifikat-info">
+          <h3>Awareness Training Quality Management System Based on ISO 9001:2015</h3>
+          <p>Universitas X - 2024</p>
+        </div>
+      </div>
+      <div class="sertifikat-card" data-category="kompetensi">
+        <img src="assets/sertifikat/14001.jpg" alt="Webinar IoT">
+        <div class="sertifikat-info">
+          <h3>Awareness Training Environmental Management System Based on ISO 14001:2015</h3>
+          <p>Universitas X - 2024</p>
+        </div>
+      </div>
+      <div class="sertifikat-card" data-category="kompetensi">
+        <img src="assets/sertifikat/45001.jpg" alt="Webinar IoT">
+        <div class="sertifikat-info">
+          <h3>Awareness Training Occupational Health & Safety Management System Based on ISO
+45001:2018</h3>
+          <p>Universitas X - 2024</p>
+        </div>
+      </div>
+      <div class="sertifikat-card" data-category="kompetensi">
+        <img src="assets/sertifikat/smk3.jpg" alt="Webinar IoT">
+        <div class="sertifikat-info">
+          <h3>Awareness Training Occupational Health & Safety Management System Based on
+SMK3 PP No 50 Tahun 2012</h3>
+          <p>Universitas X - 2024</p>
+        </div>
+      </div>
+      <div class="sertifikat-card" data-category="kompetensi">
+        <img src="assets/sertifikat/merdeka maker fest.jpg" alt="Lomba LKS Kabupaten">
+        <div class="sertifikat-info">
+          <h3>Merdeka Maker Fest 2021</h3>
+          <p>Banyumas - 2022</p>
+        </div>
+      </div>
+      <div class="sertifikat-card" data-category="kompetensi">
+        <img src="assets/sertifikat/serkom-plc-1.jpg" alt="Sertifikat K3">
+        <div class="sertifikat-info">
+          <h3>Sertifikasi Kompetensi USBN Standar Operasi Prosedur(SOP) PLC-Pneumatic</h3>
+          <p>BNSP - 2019</p>
+        </div>
+      </div>
+      <div class="sertifikat-card" data-category="lomba">
+        <img src="assets/sertifikat/peserta lks.jpeg" alt="Sertifikat K3">
+        <div class="sertifikat-info">
+          <h3>Peserta Lomba Keterampilan Siswa "Electronics Application" tingkat Provinsi</h3>
+          <p>BNSP - 2018</p>
+        </div>
+      </div>
+      <div class="sertifikat-card" data-category="lomba">
+        <img src="assets/sertifikat/SERTIF LKS.jpg" alt="Sertifikat K3">
+        <div class="sertifikat-info">
+          <h3>Juara 1 Lomba Keterampilan Siswa "Electronics Application" tingkat kabupaten</h3>
+          <p>BNSP - 2018</p>
+        </div>
+      </div>
+      <!-- Tambahan sertifikat lain nanti bisa disalin format di atas -->
+    </div>
+  </section>
+
+  <!-- Modal (Popup Gambar) -->
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <!-- Script -->
+  <script>
+    // Menu responsive toggle
+    function toggleMenu() {
+      document.getElementById("navMenu").classList.toggle("active");
+    }
+
+    // Modal
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modalImage");
+    const cards = document.querySelectorAll(".sertifikat-card");
+
+    cards.forEach(card => {
+      const img = card.querySelector("img");
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+      });
+    });
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    // Filter Kategori
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    filterButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelector(".filter-btn.active").classList.remove("active");
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+        cards.forEach(card => {
+          const kategori = card.dataset.kategori;
+          if (filter === "all" || filter === kategori) {
+            card.classList.remove("hide");
+          } else {
+            card.classList.add("hide");
+          }
+        });
+      });
+    });
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portofolio-Alif</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#38b6ff" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png" />
+  <meta name="description" content="Portofolio Alif: Pengembang sistem embedded, IoT dan desainer PCB.">
+
+  <style>
+    /* BACKGROUND MESH 3D */
+    .mesh-bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -3;
+      background: radial-gradient(circle at 30% 30%, #38b6ff22, transparent 40%),
+                  radial-gradient(circle at 70% 70%, #38b6ff11, transparent 50%);
+      background-color: #0f2027;
+      overflow: hidden;
+      animation: animateMesh 10s infinite linear;
+    }
+
+    @keyframes animateMesh {
+      0% { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(360deg); }
+    }
+
+    /* DOT GRID OVERLAY */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-image: radial-gradient(#38b6ff22 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.05;
+      z-index: -2;
+      pointer-events: none;
+    }
+
+    /* SVG WAVE BOTTOM */
+    .wave-bg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 200px;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="mesh-bg"></div>
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- NAVIGATION -->
+  <nav class="top-nav">
+    <a href="index.html" class="logo">ALIF ANANDA RIFKI</a>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="tentang.html">Tentang</a></li>
+      <li><a href="projek.html">Projek</a></li>
+      <li><a href="sertifikasi.html">Sertifikasi</a></li>
+      <li><a href="organisasi.html">Organisasi</a></li>
+      <li><a href="pengalaman.html">Pengalaman</a></li>
+      <li><a href="assets/CV_Alif.pdf" target="_blank">CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero-fullscreen">
+    <div class="intro-left">
+      <p class="intro-label">ALIF ANANDA RIFKI</p>
+      <h1>Halo! Saya <span>ALIF</span></h1>
+      <h2 class="typing-line">Seorang <span id="typing"></span><span class="cursor">|</span></h2>
+      <p class="intro-desc">
+        Pengembang teknologi fokus pada embedded system, otomasi dan desain produk digital.
+      </p>
+      <div class="sosmed sosmed-grid">
+        <div class="contact-item">
+          <a href="https://www.instagram.com/alifrifki18/" target="_blank">
+            <img src="assets/icons/ig.png" alt="Instagram">
+            <span>Instagram</span>
+          </a>
+        </div>
+        <div class="contact-item">
+          <a href="https://mail.google.com/mail/?view=cm&to=aanandarifki@gmail.com" target="_blank">
+            <img src="assets/icons/gmail.png" alt="Email">
+            <span>Email</span>
+          </a>
+        </div>
+        <div class="contact-item">
+          <a href="https://www.linkedin.com/in/alif-ananda-rifki-a5a880223" target="_blank">
+            <img src="assets/icons/linkedin.png" alt="LinkedIn">
+            <span>LinkedIn</span>
+          </a>
+        </div>
+        <div class="contact-item">
+          <a href="https://wa.me/6281225940787" target="_blank">
+            <img src="assets/icons/wa1.png" alt="WhatsApp">
+            <span>Whatsapp</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="highlight fade-in-delay">
+        <h2>Keahlian</h2>
+        <div class="highlight-grid horizontal">
+          <div class="highlight-item">
+            <img src="assets/icons/iot.png" />
+            <p>IoT</p>
+          </div>
+          <div class="highlight-item">
+            <img src="assets/icons/pcb.jpg" />
+            <p>PCB</p>
+          </div>
+          <div class="highlight-item">
+            <img src="assets/icons/arduino.jpg" />
+            <p>Arduino</p>
+          </div>
+          <div class="highlight-item">
+            <img src="assets/icons/firebase.png" />
+            <p>Firebase</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="intro-right">
+      <div class="image-frame">
+        <img src="assets/profil.png" alt="Foto Profil Alif" />
+      </div>
+      
+      <div class="cta-section fade-in-delay">
+        <h2>Ingin tahu lebih banyak?</h2>
+        <p>Lihat proyek-proyek saya dalam bidang embedded system & IoT.</p>
+        <a href="projek.html" class="cta-btn">Lihat Projek</a>
+      </div>
+      <div class="quote fade-in-delay">
+        <blockquote>“Mewujudkan sistem digital yang terintegrasi & efisien.”</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAVE BOTTOM -->
+  <svg class="wave-bg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+    <path fill="#38b6ff22" fill-opacity="1" d="M0,224L48,218.7C96,213,192,203,288,176C384,149,480,107,576,96C672,85,768,107,864,122.7C960,139,1056,149,1152,144C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+  </svg>
+  <script src="script.js"></script>
+  <script>
+  // === INTERAKTIF BACKGROUND PARTICLES ===
+  const canvas = document.getElementById("bgCanvas");
+  const ctx = canvas.getContext("2d");
+  let w = (canvas.width = window.innerWidth);
+  let h = (canvas.height = window.innerHeight);
+
+  const dots = [];
+  const dotsCount = 80;
+  const maxDistance = 120;
+
+  for (let i = 0; i < dotsCount; i++) {
+    dots.push({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      vx: (Math.random() - 0.5) * 0.7,
+      vy: (Math.random() - 0.5) * 0.7,
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    ctx.fillStyle = "#38b6ff";
+    dots.forEach((dot) => {
+      ctx.beginPath();
+      ctx.arc(dot.x, dot.y, 2, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    for (let i = 0; i < dots.length; i++) {
+      for (let j = i + 1; j < dots.length; j++) {
+        const dx = dots[i].x - dots[j].x;
+        const dy = dots[i].y - dots[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < maxDistance) {
+          ctx.strokeStyle = `rgba(56, 182, 255, ${1 - dist / maxDistance})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(dots[i].x, dots[i].y);
+          ctx.lineTo(dots[j].x, dots[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    dots.forEach((dot) => {
+      dot.x += dot.vx;
+      dot.y += dot.vy;
+      if (dot.x < 0 || dot.x > w) dot.vx *= -1;
+      if (dot.y < 0 || dot.y > h) dot.vy *= -1;
+    });
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+
+  window.addEventListener("resize", () => {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tentang Alif</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#38b6ff" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png" />
+  <meta name="description" content="Portofolio Alif: Pengembang sistem embedded, IoT dan desainer PCB.">
+</head>
+<body>
+  <!-- BACKGROUND -->
+  <div class="mesh-bg"></div>
+  <canvas id="bgCanvas"></canvas>
+  <nav class="top-nav">
+    <a href="index.html" class="logo">ALIF ANANDA RIFKI</a>
+    <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
+    <ul class="nav-links" id="navMenu">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="tentang.html">Tentang</a></li>
+      <li><a href="projek.html">Projek</a></li>
+      <li><a href="sertifikasi.html">Sertifikasi</a></li>
+      <li><a href="organisasi.html">Organisasi</a></li>
+      <li><a href="pengalaman.html">Pengalaman</a></li>
+      <li><a href="assets/CV_Alif.pdf" target="_blank">CV</a></li>
+    </ul>
+  </nav>
+
+  <section class="about-section">
+    <div class="about-container">
+      <div class="about-photo">
+        <img src="assets/profil.png" alt="Foto Alif" />
+        <a href="assets/CV_Alif.pdf" class="cta-btn" target="_blank">Unduh CV Saya</a>
+      </div>
+      <div class="about-text">
+        <h1>Kenali Saya Lebih Dekat</h1>
+        <p>Halo! Saya <strong>Alif Ananda Rifki</strong>, seorang lulusan dari program studi Teknik Elektro yang memiliki ketertarikan tinggi dalam bidang <strong>Embedded System</strong>, <strong>Internet of Things (IoT)</strong>, dan <strong>otomasi digital</strong>.</p>
+
+        <p>Saya aktif mengembangkan berbagai proyek berbasis <strong>Arduino</strong>, <strong>ESP32</strong>, serta mengintegrasikannya dengan <strong>Firebase</strong>, <strong>antarmuka web</strong>, dan desain <strong>PCB custom</strong>.</p>
+
+        <div class="quick-facts">
+          <div class="fact">
+            <h3>Lulusan</h3>
+            <p>Teknik Elektro – Universitas Wijaya Kusuma Purwokerto</p>
+            <p>GPA : 3.73/4.00</p>
+          </div>
+          <div class="fact">
+            <h3>Domisili</h3>
+            <p>Dusun Gerlangu, Rt 03 Rw 06, Desa Karangtengah, Kec.Baturaden, Banyumas, Jawa Tengah</p>
+          </div>
+          <div class="fact">
+            <h3>Penelitian</h3>
+            <p>Rancang Bangun Sistem Otomatisasi Mixing Tank Nutrisi Hidroponik pada Smart Greenhouse Melon</p>
+            <div class = "about-text">
+              <a href="assets/jurnal.pdf" class="cta-btn" target="_blank">Lihat Penelitian Saya</a>
+              <a href="https://hanita-twibbon.my.canva.site/alifananda-product-sistem-otomatisasi-mixing-tank-nutrisi-hidroponik" class="cta-btn" target="_blank">Video Penelitian Saya</a>
+            </div>
+          </div>
+          <div class="fact">
+            <h3>Minat Utama</h3>
+            <p>- Rancang Bangun Sistem Otomasi dan IoT</p>
+            <p>- Pengajaran di bidang listrik, elektronika dan pemrograman kontrol</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
